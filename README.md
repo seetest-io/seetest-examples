@@ -42,6 +42,7 @@ Listed below are test and short descriptions.
     2. Set the variable ACCESS_KEY in the code with your access key (got from  step 2)
 
     Run all tests using following command in command line.
+
     ```
     gradlew runTests
     ```
