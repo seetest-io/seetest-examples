@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="seetest-examples" configfailurepolicy="continue" verbose="2">
+   <test name="seetest-examples">
+      <classes>
+         <class name="io.seetest.examples.WebUrlResevedDeviceTest"/>
+      </classes>
+   </test>
+</suite>

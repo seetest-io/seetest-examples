@@ -1,0 +1,110 @@
+plugins {
+    id 'java'
+}
+
+group 'seetest-examples'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://cloud.experitest.com/repo/"
+    }
+}
+
+sourceSets {
+    main {
+        runtimeClasspath = files(output.resourcesDir) + runtimeClasspath
+    }
+    test{
+        runtimeClasspath = main.runtimeClasspath
+    }
+}
+
+dependencies {
+    compile group: 'io.appium', name: 'java-client', version: '4.1.2'
+    compile group: 'org.testng', name: 'testng', version: '6.9.10'
+    compile 'org.slf4j:slf4j-api:1.7.23'
+    compile 'org.slf4j:slf4j-log4j12:1.7.7'
+    compile group: 'com.experitest', name: 'seetest-client', version: '+'
+    compile group: 'com.experitest', name: 'appium-seetest-extension', version: '+'
+}
+
+task runTests(type: JavaExec, dependsOn: 'classes') {
+    main = 'org.testng.TestNG'
+    classpath = files("./src/test/resources",
+            project.sourceSets.main.compileClasspath,
+            project.sourceSets.test.compileClasspath,
+            project.sourceSets.main.runtimeClasspath,
+            project.sourceSets.test.runtimeClasspath)
+    args = ["./src/main/java/testng.xml"]
+}
+
+task runAndroidApplicationTest(type: JavaExec, dependsOn: 'classes') {
+    main = 'org.testng.TestNG'
+    classpath = files("./src/test/resources",
+            project.sourceSets.main.compileClasspath,
+            project.sourceSets.test.compileClasspath,
+            project.sourceSets.main.runtimeClasspath,
+            project.sourceSets.test.runtimeClasspath)
+    args = ['./src/main/java/testngAndroidApplicationTest.xml']
+}
+
+task runIOSApplicationTest(type: JavaExec, dependsOn: 'classes') {
+    main = 'org.testng.TestNG'
+    classpath = files("./src/test/resources",
+            project.sourceSets.main.compileClasspath,
+            project.sourceSets.test.compileClasspath,
+            project.sourceSets.main.runtimeClasspath,
+            project.sourceSets.test.runtimeClasspath)
+    args = ['./src/main/java/testngIOSApplicationTest.xml']
+}
+
+task runAppReservedDeviceTest(type: JavaExec, dependsOn: 'classes') {
+    main = 'org.testng.TestNG'
+    classpath = files("./src/test/resources",
+            project.sourceSets.main.compileClasspath,
+            project.sourceSets.test.compileClasspath,
+            project.sourceSets.main.runtimeClasspath,
+            project.sourceSets.test.runtimeClasspath)
+    args = ['./src/main/java/testngAppReservedDeviceTest.xml']
+}
+
+
+
+task runWebUrlDeviceTest(type: JavaExec, dependsOn: 'classes') {
+    main = 'org.testng.TestNG'
+    classpath = files("./src/test/resources",
+            project.sourceSets.main.compileClasspath,
+            project.sourceSets.test.compileClasspath,
+            project.sourceSets.main.runtimeClasspath,
+            project.sourceSets.test.runtimeClasspath)
+    args = ['./src/main/java/testngWebUrlDeviceTest.xml']
+}
+
+
+task runWebUrlSpecificDeviceTest(type: JavaExec, dependsOn: 'classes') {
+    main = 'org.testng.TestNG'
+    classpath = files("./src/test/resources",
+            project.sourceSets.main.compileClasspath,
+            project.sourceSets.test.compileClasspath,
+            project.sourceSets.main.runtimeClasspath,
+            project.sourceSets.test.runtimeClasspath)
+    args = ['./src/main/java/testngWebUrlSpecificDeviceTest.xml']
+}
+
+task runWebUrlResevedDeviceTest(type: JavaExec, dependsOn: 'classes') {
+    main = 'org.testng.TestNG'
+    classpath = files("./src/test/resources",
+            project.sourceSets.main.compileClasspath,
+            project.sourceSets.test.compileClasspath,
+            project.sourceSets.main.runtimeClasspath,
+            project.sourceSets.test.runtimeClasspath)
+    args = ['./src/main/java/testngWebUrlResevedDeviceTest.xml']
+}
+
+
+
+
