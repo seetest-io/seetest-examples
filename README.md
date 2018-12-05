@@ -46,14 +46,14 @@ Listed below are test and short descriptions.
     gradlew runTests
     ```
 
-    To Run Individual tests. See below.s
+    To Run Individual tests. See below.
 
-    WebUrlSpecificDeviceTest - gradlew runWebUrlSpecificDeviceTest
-    WebUrlDeviceTest - gradlew runWebUrlDeviceTest
-    WebUrlResevedDeviceTest - gradlew runWebUrlResevedDeviceTest
-    IOSApplicationTest - gradlew runIOSApplicationTest
-    AppReservedDeviceTest - gradlew runAppReservedDeviceTest
-    AndroidApplicationTest - gradlew runAndroidApplicationTest
+        WebUrlSpecificDeviceTest - gradlew runWebUrlSpecificDeviceTest
+        WebUrlDeviceTest - gradlew runWebUrlDeviceTest
+        WebUrlResevedDeviceTest - gradlew runWebUrlResevedDeviceTest
+        IOSApplicationTest - gradlew runIOSApplicationTest
+        AppReservedDeviceTest - gradlew runAppReservedDeviceTest
+        AndroidApplicationTest - gradlew runAndroidApplicationTest
 
 
 
