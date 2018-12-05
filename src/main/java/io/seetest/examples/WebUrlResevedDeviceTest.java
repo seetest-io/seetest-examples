@@ -30,17 +30,16 @@ import java.net.URL;
  *
  * Set the access key for seetest cloud in variable ACCESS_KEY.
  * To change the OS of device, change @Optional in setUP function to "ios"
- * To change the device, change the @serialnumber to the device id with same os as @os.
- *    private static final String DEVICE_QUERY = "@os='android' and @serialnumber='d22bfadd'";
- *
+ * To change the device, change the DEVICE_ID to the if of the device in seetest cloud.
+ *   Make sure value of OS variable is same as operating system of device.
  *
  *
  */
 public class WebUrlResevedDeviceTest {
 
     public static final String ENV_VAR_ACCESS_KEY = "SEETEST_IO_ACCESS_KEY";
-    private static final String TEST_DESCRIPTION = "Seetest example to load a URL  in a browser any a" +
-            " specific unreserved device in seetest cloud.";
+    private static final String TEST_DESCRIPTION = "Seetest example to load a URL in a browser in a" +
+            " reserved device in seetest cloud.";
 
 
 
@@ -54,11 +53,11 @@ public class WebUrlResevedDeviceTest {
     public static final String XPATH_QUERY = "//*[contains(text(),'In focus')]";
     public static final String EXPECTED_RESPONSE = "In focus";
     private static final String ACCESS_KEY =
-            "eyJ4cC51IjoyNTgyODI1LCJ4cC5wIjoyNTgyODIxLCJ4cC5tIjoiTVRVME1qQXdOelkwTnpnMU1BIiwiYWxnIjoiSFMyNTYifQ.eyJleHAiOjE4NTczNjc2NDgsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.ob4AJwWuSaPkDvjI8lUHIrV_wZg4PYFfLIrJ_SuhcF0";
+            "";
 
     private static final String OS = "android";
     // Change Device id to right device. Make sure that its Operating System matches the OS.
-    private static final String DEVICE_ID = "d22bfadd";
+    private static final String DEVICE_ID = "";
 
     /**
      * Core setup function, which sets up the selenium/appium drivers.
@@ -131,14 +130,10 @@ public class WebUrlResevedDeviceTest {
         }
 
         if (DEVICE_ID == null || DEVICE_ID.isEmpty()) {
-            LOGGER.error("DEVICE_ID variable bust be set to correct Device.");
+            LOGGER.error("DEVICE_ID variable must be set to id of a device in seetest cloud.");
             throw new RuntimeException("Invalid ACCESS_KEY or DEVICE_ID");
         }
-
-
     }
-
-
 
     @AfterClass
     protected void tearDown() {

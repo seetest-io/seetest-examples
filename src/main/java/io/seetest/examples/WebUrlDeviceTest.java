@@ -34,9 +34,7 @@ public class WebUrlDeviceTest {
 
     public static final String ENV_VAR_ACCESS_KEY = "SEETEST_IO_ACCESS_KEY";
     private static final String TEST_DESCRIPTION = "Seetest example to load a URL  in a " +
-            "browser any Android device in seetest cloud."
-            + "\n Set the access key for seetest cloud in variable ACCESS_KEY.\n" +
-             " \n To change the OS of device, change @Optional in setUP function to ios";
+            "browser any Android device in seetest cloud.";
 
 
     DesiredCapabilities dc = new DesiredCapabilities();
@@ -49,7 +47,7 @@ public class WebUrlDeviceTest {
     public static final String XPATH_QUERY = "//*[contains(text(),'In focus')]";
     public static final String EXPECTED_RESPONSE = "In focus";
     private static final String ACCESS_KEY =
-            "eyJ4cC51IjoyNTgyODI1LCJ4cC5wIjoyNTgyODIxLCJ4cC5tIjoiTVRVME1qQXdOelkwTnpnMU1BIiwiYWxnIjoiSFMyNTYifQ.eyJleHAiOjE4NTczNjc2NDgsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.ob4AJwWuSaPkDvjI8lUHIrV_wZg4PYFfLIrJ_SuhcF0";
+            "";
 
     private static final String DEVICE_QUERY = "@os='android'";
 
@@ -68,7 +66,7 @@ public class WebUrlDeviceTest {
         URL seetestURL = null;
 
         if (ACCESS_KEY == null || ACCESS_KEY.length() < 10) {
-            LOGGER.error("Access key must be set. Please set the access key in the code.");
+            LOGGER.error("Access key must be set. Please set the ACCESS_KEY in the code.");
             LOGGER.info("To get access get to to https://cloud.seetest.io or learn at " +
                     "https://docs.seetest.io/display/SEET/Execute+Tests+on+SeeTest+-+Obtaining+Access+Key", ACCESS_KEY);
             throw new RuntimeException("Access key invalid : accessKey - " + ACCESS_KEY);

@@ -18,8 +18,15 @@ import java.net.URL;
 /**
  * Example Test for Sample App EriBank on a specific device for Android/IOS OS in seetest cloud.
  *
+ Reserved here means you have reserved it using following navigation,
+ *  Click device button on the device in seestest cloud
+ *    -> Click Automation tab
+ *    -> Click on "Lets Start Automating"  button.
  *
- *
+ * Set the access key for seetest cloud in variable ACCESS_KEY.
+ * To change the OS of device, change @Optional in setUP function to "ios"
+ * To change the device, change the DEVICE_ID to the if of the device in seetest cloud.
+ *   Make sure value of OS variable is same as operating system of device.
  *
  */
 
@@ -28,9 +35,8 @@ public class AppReservedDeviceTest {
     public static final boolean FULL_RESET = true;
     public static final boolean INSTRUMENT_APP = true;
     public static final String SEETEST_IO_APPIUM_URL = "https://cloud.seetest.io:443/wd/hub";
-    private static final String DEVICE_QUERY = "@os='android'";
     private static final String ACCESS_KEY =
-            "eyJ4cC51IjoyNTgyODI1LCJ4cC5wIjoyNTgyODIxLCJ4cC5tIjoiTVRVME1qQXdOelkwTnpnMU1BIiwiYWxnIjoiSFMyNTYifQ.eyJleHAiOjE4NTczNjc2NDgsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.ob4AJwWuSaPkDvjI8lUHIrV_wZg4PYFfLIrJ_SuhcF0";
+            "";
     private static final String IOS_APP_NAME = "com.experitest.ExperiBank";
     private static final String ANDROID_APP_NAME = "com.experitest.ExperiBank/.LoginActivity";
 
@@ -40,13 +46,14 @@ public class AppReservedDeviceTest {
     private DesiredCapabilities dc = new DesiredCapabilities();
     private RemoteWebDriver driver = null;
 
-    private static final String TEST_DESCRIPTION = "Example Test for Sample App EriBank on IOS or Android ";
+    private static final String TEST_DESCRIPTION = "Example Test for Sample App EriBank on IOS or Android for device which " +
+            "is reserved in seetest cloud";
 
     //private static final String OS = "ios";
     //private static final String DEVICE_ID = "e5b1be805dfc50b8f25837da50591b701fd5534c";
 
     private static final String OS = "android";
-    private static final String DEVICE_ID = "d22bfadd";
+    private static final String DEVICE_ID = "";
 
     /**
      * Core setup function, which sets up the selenium/appium drivers.
@@ -120,7 +127,7 @@ public class AppReservedDeviceTest {
         }
 
         if (DEVICE_ID == null || DEVICE_ID.isEmpty()) {
-            LOGGER.error("DEVICE_ID variable must be set to correct Device.");
+            LOGGER.error("DEVICE_ID  variable must be set to id of a device in seetest clouds.");
             throw new RuntimeException("Invalid ACCESS_KEY or DEVICE_ID");
         }
     }

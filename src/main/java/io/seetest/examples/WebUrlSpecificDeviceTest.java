@@ -22,26 +22,23 @@ import java.net.URL;
 /**
  * Seetest example to load a URL  in a browser any a specific unreserved device in seetest cloud.
  *
- * Unreserved here means if the device is not used then the test will be executed. Otherwie there will
+ * Unreserved here means if the device is not used then the test will be executed. Otherwise there will
  * be a timeout failure.
  *
  *
  * Set the access key for seetest cloud in variable ACCESS_KEY.
  * To change the OS of device, change @Optional in setUP function to "ios"
- * To change the device, change the @serialnumber to the device id with same os as @os.
- *    private static final String DEVICE_QUERY = "@os='android' and @serialnumber='d22bfadd'";
+ * To change the device, change the value of SERIAL_NUMBER  variable to id of the device.
+ *    Make sure value of OS variable is same as operating system of device.
  *
  *
  *
  */
 public class WebUrlSpecificDeviceTest {
 
-    private static final String TEST_DESCRIPTION = "SSeetest example to load a URL  in a browser any a" +
-            " specific unreserved device in seetest cloud."
-            + "\n Set the access key for seetest cloud in variable ACCESS_KEY.\n"
-            + "\n To change the OS of device, change @Optional in setUP function to ios"
-            + "\n To change the device, change the @serialnumber to the device id with same os as @os.\n"
-            +    "  private static final String DEVICE_QUERY = @os='android' and @serialnumber='d22bfadd'";
+    private static final String TEST_DESCRIPTION = "Seetest example to load a URL  in a browser in a" +
+            " specific unreserved device in seetest cloud.";
+
     private DesiredCapabilities dc = new DesiredCapabilities();
     private RemoteWebDriver driver = null;
     private String os;
@@ -52,9 +49,9 @@ public class WebUrlSpecificDeviceTest {
     public static final String XPATH_QUERY = "//*[contains(text(),'In focus')]";
     public static final String EXPECTED_RESPONSE = "In focus";
     private static final String ACCESS_KEY =
-            "eyJ4cC51IjoyNTgyODI1LCJ4cC5wIjoyNTgyODIxLCJ4cC5tIjoiTVRVME1qQXdOelkwTnpnMU1BIiwiYWxnIjoiSFMyNTYifQ.eyJleHAiOjE4NTczNjc2NDgsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.ob4AJwWuSaPkDvjI8lUHIrV_wZg4PYFfLIrJ_SuhcF0";
+            "";
 
-    private static final String SERIAL_NUMBER = "d22bfadd";
+    private static final String SERIAL_NUMBER = "";
     //private static final String SERIAL_NUMBER = "";
     private static final String OS = "android";
 
@@ -138,7 +135,7 @@ public class WebUrlSpecificDeviceTest {
         }
 
         if (SERIAL_NUMBER == null || SERIAL_NUMBER.isEmpty()) {
-            LOGGER.error("SERIAL_NUMBER variable must be set to correct Device.");
+            LOGGER.error("SERIAL_NUMBER  variable must be set to id of a device in seetest cloud.");
             throw new RuntimeException("Invalid ACCESS_KEY  or SERIAL_NUMBER");
         }
 

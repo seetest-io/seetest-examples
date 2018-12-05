@@ -1,4 +1,4 @@
-# seetest.io - Seetest Example
+# seetest.io - Seetest Examples
 
 This project demonstrates various tests like Android Test, IOS Test, Browser test using Java code snippets.
 Listed below are test and short descriptions.
@@ -45,10 +45,17 @@ Listed below are test and short descriptions.
     ```
     gradlew runTests
     ```
-    To Run WebUrlSpecificDeviceTest.
-    ```
-    gradlew runWebUrlSpecificDeviceTest
-    s```
+
+    To Run Individual tests. See below.s
+
+    WebUrlSpecificDeviceTest - gradlew runWebUrlSpecificDeviceTest
+    WebUrlDeviceTest - gradlew runWebUrlDeviceTest
+    WebUrlResevedDeviceTest - gradlew runWebUrlResevedDeviceTest
+    IOSApplicationTest - gradlew runIOSApplicationTest
+    AppReservedDeviceTest - gradlew runAppReservedDeviceTest
+    AndroidApplicationTest - gradlew runAndroidApplicationTest
+
+
 
 
 

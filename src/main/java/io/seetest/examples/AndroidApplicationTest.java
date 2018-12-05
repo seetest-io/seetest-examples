@@ -33,7 +33,7 @@ public final class AndroidApplicationTest  {
     public static final String SEETEST_IO_APPIUM_URL = "https://cloud.seetest.io:443/wd/hub";
     private static final String DEVICE_QUERY = "@os='android'";
     private static final String ACCESS_KEY =
-            "eyJ4cC51IjoyNTgyODI1LCJ4cC5wIjoyNTgyODIxLCJ4cC5tIjoiTVRVME1qQXdOelkwTnpnMU1BIiwiYWxnIjoiSFMyNTYifQ.eyJleHAiOjE4NTczNjc2NDgsImlzcyI6ImNvbS5leHBlcml0ZXN0In0.ob4AJwWuSaPkDvjI8lUHIrV_wZg4PYFfLIrJ_SuhcF0";
+            "";
     private static final String ANDROID_APP_NAME = "com.experitest.ExperiBank/.LoginActivity";
 
     Logger LOGGER = new Log4jLoggerFactory().getLogger(this.getClass().getName());
