@@ -59,10 +59,13 @@ Listed below are test and short descriptions.
 8. Tests can also be run using IntelliJ or Eclipse.
 
    Open the project in IntelliJ or Eclipse as gradle project
+
    Eclipse:
+
        ![Scheme](images/eclipse.png)
+
    InteliJ:
-       ![Scheme](images/intelij.pnj)
+       ![Scheme](images/intelij.png)
 
 
 
