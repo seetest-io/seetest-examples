@@ -56,6 +56,15 @@ Listed below are test and short descriptions.
         AppReservedDeviceTest - gradlew runAppReservedDeviceTest
         AndroidApplicationTest - gradlew runAndroidApplicationTest
 
+8. Tests can also be run using IntelliJ or Eclipse.
+
+   Open the project in IntelliJ or Eclipse as gradle project
+   Eclipse:
+       ![Scheme](images/eclipse.png)
+   InteliJ:
+       ![Scheme](images/intelij.pnj)
+
+
 
 
 
